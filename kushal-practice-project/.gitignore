@@ -1,0 +1,9 @@
+# General
+/target
+.project
+.classpath
+*.properties
+*.settings
+/properties
+/bin/
+/.fbprefs
