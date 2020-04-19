@@ -51,4 +51,29 @@ public class ArraysTest
         assertArrayEquals(new int[] {0,1,9,16,100}, Arrays.sortedSquares(new int[] {-4,-1,0,3,10}));
         assertArrayEquals(new int[] {4,9,9,49,121}, Arrays.sortedSquares(new int[] {-7,-3,2,3,11}));
     }
+    
+    /**
+     * Input: [1,0,2,3,0,4,5,0]
+     * Output: [1,0,0,2,3,0,0,4]
+     */
+    @Test
+    public void testDuplicateZeros()
+    {
+        assertArrayEquals(new int[] {1,0,0,2,3,0,0,4}, Arrays.duplicateZeros(new int[] {1,0,2,3,0,4,5,0}));
+        assertArrayEquals(new int[] {1,2,3}, Arrays.duplicateZeros(new int[] {1,2,3}));
+        assertArrayEquals(new int[] {0,0,0,0,0}, Arrays.duplicateZeros(new int[] {0,0,0,0,0}));
+    }
+    
+    /**
+     * Input: [1,2,3,0,0,0], m=3, [2,5,6], n=3;
+     * Output: [1,2,2,3,5,6]
+     */
+    @Test
+    public void testMerge()
+    {
+        assertArrayEquals(new int[] {1,2,2,3,5,6}, Arrays.merge(new int[] {1, 2, 3, 0,0,0}, 3, new int[] {2,5,6}, 3));
+        assertArrayEquals(new int[] {1}, Arrays.merge(new int[1], 0, new int[] {1}, 1));
+        assertArrayEquals(new int[] {1,2}, Arrays.merge(new int[] {2,0}, 1, new int[] {1}, 1));
+        assertArrayEquals(new int[] {1,2,3,4,5,6}, Arrays.merge(new int[] {4,5,6,0,0,0}, 3, new int[] {1,2,3}, 3));
+    }
 }

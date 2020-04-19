@@ -87,4 +87,80 @@ final class Arrays
         return result;
         
     }
+    
+    /**
+     * Given a fixed length array arr of integers, duplicate each occurrence of zero, shifting the remaining elements to the right.
+     * 
+     * @param arr 1 <= arr.length <= 10000, 0 <= arr[i] <= 9
+     */
+    static int[] duplicateZeros(int[] arr) 
+    {
+        for(int i = 0; i<arr.length; i++)
+        {
+            if(arr[i] == 0)
+            {
+                for(int j = arr.length-2; j > i ; j--)
+                {
+                    arr[j+1] = arr[j];
+                }
+                if(i < arr.length -1)
+                {
+                    arr[i+1] = 0;
+                    i++;
+                }
+            }
+        }
+        return arr;
+    }
+    
+    /**
+     * Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+     * 
+     * The number of elements initialized in nums1 and nums2 are m and n respectively.
+     * You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
+     */
+    static int[] merge(int[] nums1, int m, int[] nums2, int n) 
+    {
+        int i = 0,j = 0;
+        int count = 0;
+        int length = m+n;
+        if(n == 0)
+        {
+            return nums1;
+        }
+
+        if(m == 0)
+        {
+            while(count < length)
+            {
+                nums1[count] = nums2[count];
+                count++;
+            }
+            return nums1;
+        }
+        while(count < length && j<n)
+        {
+            if(nums1[i] <= nums2[j] && i < m)
+            {
+                nums1[count] = nums1[i];
+                i++;
+            }
+            else
+            {
+                if(i<m)
+                {
+                    for(int k = length-2; k >=count; k--)
+                    {
+                        nums1[k+1] = nums1[k];
+                    }
+                    i++;
+                    m++;
+                }
+                nums1[count] = nums2[j];
+                j++;
+            }
+            count++;
+        }
+        return nums1;
+    }
 }
