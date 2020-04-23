@@ -1,4 +1,4 @@
-package com.kushal.practice.project.leetcode.explore.arrays101;
+package com.kushal.practice.project.leetcode.explore.learn;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,8 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Input: [1,1,0,1,1,1] Output: 3 Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s
- * is 3.
+ * Main Class for Arrays.
  * 
  * @author Kushalvtiger
  */
@@ -46,7 +45,8 @@ final class Arrays
     }
 
     /**
-     * Given an array nums of integers, return how many of them contain an even number of digits. 1 <= nums.length <= 500 1 <= nums[i] <= 10^5
+     * Given an array nums of integers, return how many of them contain an even number of digits.
+     * @param nums  1 <= nums.length <= 500 1 <= nums[i] <= 10^5
      */
     static int findNumbers(int[] nums)
     {
@@ -66,7 +66,7 @@ final class Arrays
      * Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing
      * order.
      * @param array 1 <= length <= 10000, -10000 <= array[i] <= 10000, array is sorted in non-decreasing order.
-     * @return
+     * @return sortedSquares
      */
     static int[] sortedSquares(int[] array)
     {
@@ -483,12 +483,12 @@ final class Arrays
             nums[index - 1] = -1 * Math.abs(nums[index - 1]);
         }
 
-        List<Integer> result = new ArrayList();
+        List<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < nums.length; i++)
         {
             if (nums[i] > 0)
             {
-                result.add(i + 1);
+                result.add(Integer.valueOf(i + 1));
             }
         }
 
