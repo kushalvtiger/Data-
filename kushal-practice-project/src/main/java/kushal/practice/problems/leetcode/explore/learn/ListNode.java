@@ -1,4 +1,4 @@
-package com.kushal.practice.project.leetcode.explore.learn;
+package kushal.practice.problems.leetcode.explore.learn;
 
 /**
  * Simple single linked list node.
