@@ -46,7 +46,7 @@ public class Angel
     //
     public static Collection<List<String>> anagrams(final String[] arrayOfAnagrams)
     {
-        final Map<String, List<String>> anagramsMap = new HashMap<>();
+        final Map<String, List<String>> anagramsMap = new HashMap();
         //
         for (int i = 0; i < arrayOfAnagrams.length; i++)
         {

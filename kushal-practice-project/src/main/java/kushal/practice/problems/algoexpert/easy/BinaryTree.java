@@ -72,7 +72,7 @@ public class BinaryTree
     /**O(n) Time and O(h) Space */
     public static int nodeDepths(BT root)
     {
-        final List<Level> depthTree = new ArrayList<>();
+        final List<Level> depthTree = new ArrayList();
         depthTree.add(new Level(root,0));
         int sum = 0;
         while(depthTree.size()>0)
